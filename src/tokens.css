@@ -1,0 +1,208 @@
+/**
+ * ╔══════════════════════════════════════════════════════════════╗
+ * ║            JOBNOVA DESIGN SYSTEM TOKENS                      ║
+ * ║   Source of truth — all values derived from Figma variables  ║
+ * ║   File: JobNova-Redesign (HKaPDw3kBZgRTzFBxX0Mas)           ║
+ * ╚══════════════════════════════════════════════════════════════╝
+ */
+
+:root {
+
+  /* ─────────────────────────────────────────
+     COLOR TOKENS
+     Naming: --color-{group}-{variant}
+  ───────────────────────────────────────── */
+
+  /* Main / Brand (Acid Green) */
+  --color-main-default:   #b0f809;   /* Main/Default  — primary accent */
+  --color-main-defult:    #A8FA00;   /* Main/Defult   — alternate primary */
+  --color-main-border:    #e8e9f0;   /* Main/Border   — subtle border */
+  --color-main-disable:   #e7e8e9;   /* Main/Disable  — disabled state */
+
+  /* Background */
+  --color-bg:             #f9fafb;   /* Background/Bg      — page background */
+  --color-bg-light:       #f6fee2;   /* Background/light   — brand-tinted surface (green) */
+  --color-bg-neutral:     #f3f4f6;   /* Background/neutral — untinted light surface for buttons */
+
+  /* Text */
+  --color-text-default:   #09090b;   /* Text/Default     — primary text */
+  --color-text-second:    #525558;   /* Text/Second      — secondary text */
+  --color-text-second-2:  #84888b;   /* Text/Second 2    — tertiary text */
+  --color-text-white:     #ffffff;   /* Text/White       — inverse text */
+  --color-text-bg:        #f7f8f9;   /* Text/Bg          — text on bg */
+  --color-text-placeholder: #afafbc; /* Text/placeholder — placeholder */
+  --color-text-green:     #73a605;   /* text             — green text */
+
+  /* Secondary / Indigo */
+  --color-secondary-text:    #6366f1; /* Secondary/Text    — indigo labels */
+  --color-secondary-color:   #edf2ff; /* Secondary/Color   — indigo bg */
+  --color-secondary-default: #818cf8; /* Secondary/Defult  — indigo default */
+
+  /* State */
+  --color-state-red:    #f44336;     /* State/Red    — error / danger */
+  --color-state-orange: #ffc107;     /* State/Orage  — warning */
+
+  /* User Interface */
+  --color-ui-placeholder: #ccccd0;  /* User Interface/Placeholder */
+  --color-ui-gray1:       #474646;  /* User Interface/Gray1 */
+  --color-ui-gray3:       #787675;  /* User Interface/Gray3 */
+  --color-ui-black:       #151614;  /* Grey/Black */
+
+  /* Border */
+  --color-border-light:   rgba(255, 255, 255, 0.64); /* Boder-light */
+  --color-border-default: #e8e9f0;
+
+  /* ─────────────────────────────────────────
+     SHADOWS — from Figma "card shadow" effect
+  ───────────────────────────────────────── */
+  --shadow-card:
+    0 0 4px 0 rgba(21, 22, 20, 0.12),
+    0 4px 12px 8px rgba(0, 0, 0, 0.059);
+  --shadow-sm:   0 2px 18px rgba(0, 0, 0, 0.05);
+  --shadow-md:   0 8px 48px rgba(0, 0, 0, 0.08);
+  --shadow-xl:   0 24px 80px rgba(0, 0, 0, 0.13);
+
+  /* ─────────────────────────────────────────
+     TYPOGRAPHY — Font Families
+  ───────────────────────────────────────── */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-accent:  'Lexend', sans-serif;
+
+  /* ─────────────────────────────────────────
+     TYPOGRAPHY — Scale
+     Source: Figma variable definitions
+  ───────────────────────────────────────── */
+
+  /* Headings — Plus Jakarta Sans */
+  --text-h2-size:        48px;
+  --text-h2-weight:      800;   /* ExtraBold */
+  --text-h2-line-height: 48px;
+
+  --text-h3-size:        36px;
+  --text-h3-weight:      800;   /* ExtraBold */
+  --text-h3-line-height: 40px;
+
+  --text-h4-size:        24px;
+  --text-h4-weight:      700;   /* Bold */
+  --text-h4-line-height: 32px;
+
+  --text-h5-size:        16px;
+  --text-h5-weight:      500;   /* Medium */
+  --text-h5-line-height: 24px;
+
+  /* Body — Plus Jakarta Sans */
+  --text-body-l-size:        16px;
+  --text-body-l-weight:      400;   /* Regular */
+  --text-body-l-line-height: 26px;
+
+  --text-body-size:        14px;
+  --text-body-weight:      500;   /* Medium */
+  --text-body-line-height: 20px;
+
+  --text-body-light-size:        14px;
+  --text-body-light-weight:      400;   /* Regular */
+  --text-body-light-line-height: 20px;
+
+  --text-body-large-size:        20px;
+  --text-body-large-weight:      500;   /* Medium */
+  --text-body-large-line-height: 28px;
+
+  /* Buttons — Plus Jakarta Sans */
+  --text-btn-l-size:        18px;
+  --text-btn-l-weight:      700;   /* Bold */
+  --text-btn-l-line-height: 28px;
+
+  --text-btn-s-size:        14px;
+  --text-btn-s-weight:      700;   /* Bold */
+  --text-btn-s-line-height: 20px;
+
+  /* Hint — Plus Jakarta Sans */
+  --text-hint-size:        10px;
+  --text-hint-weight:      800;   /* ExtraBold */
+  --text-hint-line-height: 15px;
+
+  /* Body — Inter */
+  --text-inter-16-size:        16px;
+  --text-inter-16-weight:      400;
+  --text-inter-16-line-height: 1.5;
+
+  --text-inter-base-size:        16px;
+  --text-inter-base-weight:      400;
+  --text-inter-base-line-height: 24px;
+
+  /* Heading/H5 — Inter */
+  --text-inter-h5-size:        18px;
+  --text-inter-h5-weight:      500;
+  --text-inter-h5-line-height: 1.5;
+
+  /* Title/H4 — Inter */
+  --text-inter-h4-size:        24px;
+  --text-inter-h4-weight:      500;
+  --text-inter-h4-line-height: 32px;
+
+  /* ─────────────────────────────────────────
+     SPACING
+  ───────────────────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ─────────────────────────────────────────
+     BORDER RADIUS
+  ───────────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ─────────────────────────────────────────
+     GRADIENTS
+  ───────────────────────────────────────── */
+  --gradient-highlight: linear-gradient(104.68deg, #B0F90E 7.76%, #7BFFB4 98.83%);
+  --gradient-hero-glow: radial-gradient(ellipse at 60% 40%, rgba(176,248,9,0.18) 0%, transparent 70%);
+
+  /* ─────────────────────────────────────────
+     BUTTON INTERACTION TOKENS
+     Layer 2 — Semantic component tokens
+     All button variants MUST reference these.
+  ───────────────────────────────────────── */
+
+  /* Motion — shared timing for all buttons */
+  --btn-duration:        0.18s;
+  --btn-easing:          cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* States — shared geometry */
+  --btn-hover-lift:      translateY(-2px);   /* uniform lift on hover */
+  --btn-active-scale:    scale(0.96);        /* uniform press depth  */
+
+  /* Focus ring — accessibility */
+  --btn-focus-ring:      0 0 0 3px rgba(176, 248, 9, 0.55);
+
+  /* Variant — Primary (Acid Green) */
+  --btn-primary-bg:             var(--color-main-default);
+  --btn-primary-color:          var(--color-text-default);
+  --btn-primary-hover-opacity:  0.9;
+  --btn-primary-hover-shadow:   0 12px 36px rgba(176, 248, 9, 0.38);
+
+  /* Variant — Dark (Black) — hover uses shimmer, not opacity */
+  --btn-dark-bg:                var(--color-text-default);
+  --btn-dark-color:             var(--color-text-white);
+  --btn-dark-hover-shadow:      0 8px 24px rgba(9, 9, 11, 0.22);
+
+  /* Variant — Ghost (Transparent) */
+  --btn-ghost-color:            var(--color-text-default);
+  --btn-ghost-hover-bg:         rgba(0, 0, 0, 0.05);
+}
