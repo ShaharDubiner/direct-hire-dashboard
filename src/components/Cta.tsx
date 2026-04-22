@@ -4,12 +4,12 @@ export default function Cta() {
       <div className="container">
         <div className="cta-card">
           <h2 className="cta-heading">
-            Ready to land your dream role faster?
+            Stop applying.<br />Start getting hired.
           </h2>
           <p className="cta-body">
-            Join the next generation of job searching. Secure your dream role with AI-driven precision.
+            Your AI agent is already searching. Join professionals who let JobNova do the work.
           </p>
-          <a href="#" className="cta-btn">Start Explore for Free</a>
+          <a href="#" className="cta-btn">Let AI Apply for Me</a>
         </div>
       </div>
     </section>

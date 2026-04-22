@@ -1,86 +1,139 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+import { Player } from '@lottiefiles/react-lottie-player'
+
+type Feature = {
+  id: string
+  label: string
+  title: string
+  body: string
+  duration: number   // ms
+  lottie?: string
+}
+
+const FEATURES: Feature[] = [
+  {
+    id: 'notification',
+    label: 'Instant Job Notification',
+    title: 'Be first before the listing goes public',
+    body: 'Our neural network scans 50,000+ sources per second. Precision-matched alerts arrive before the job hits public boards — giving you a critical head start every time.',
+    duration: 8620,
+    lottie: '/animations/Instant Job Notification.json',
+  },
+  {
+    id: 'agent',
+    label: 'AI Agent Support',
+    title: 'A career advocate that never clocks out',
+    body: 'A persistent AI agent that learns your goals, handles recruiter outreach, and manages your entire pipeline — all while you focus on life.',
+    duration: 5000,
+  },
+  {
+    id: 'resume',
+    label: 'AI Resume Customizer',
+    title: '100% ATS-optimized, 0% effort',
+    body: 'Instantly re-tune your resume for every role. Tailored keywords and perfect formatting — automatically adapted to pass every ATS filter.',
+    duration: 5000,
+  },
+  {
+    id: 'auto-apply',
+    label: 'AI Auto Apply',
+    title: '300+ jobs applied while you live your life',
+    body: 'Set your criteria once. Our agent automatically applies to matching positions around the clock — no forms, no repetition, no burnout.',
+    duration: 5000,
+  },
+]
+
 export default function Features() {
+  const [active, setActive] = useState(0)
+  const [started, setStarted] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  // Start animations when section enters viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setStarted(true) },
+      { threshold: 0.25 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  const handleProgressEnd = () => {
+    setActive(prev => (prev + 1) % FEATURES.length)
+  }
+
   return (
-    <section className="features" id="features">
+    <section ref={sectionRef} className="features" id="features">
+
+      {/* Section header */}
       <div className="container">
-
-        <div className="section-header">
-          <p className="section-label">✦ Core Features</p>
-          <h2 className="section-title">Precision Powered by Intelligence</h2>
+        <div className="section-header section-header--center">
+          <p className="section-label">✦ How It Works</p>
+          <h2 className="section-title">Discover. Optimize. Apply.</h2>
+          <p className="section-body">
+            Your AI agent handles every step — you just show up to interviews.
+          </p>
         </div>
+      </div>
 
-        {/* Row 1 */}
-        <div className="features-row features-row--2col">
+      {/* Main content */}
+      <div className="container features-body">
 
-          {/* Feature 1: Instant Job Notification */}
-          <div className="feature-card feature-card--large feature-card--notification scroll-fade">
-            <div className="feature-icon">
-              <svg width="24" height="24" fill="none" stroke="var(--color-text-default)" viewBox="0 0 24 24">
-                <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-              </svg>
-            </div>
-            <h3 className="feature-title">Instant Job Notification</h3>
-            <p className="feature-body">
-              Our neural network scans 50,000+ sources per second. Be the first to apply with precision-matched alerts that arrive before the job hits public boards.
-            </p>
-            <div className="feature-preview feature-preview--notification">
-              <img src="/img/features/Instant%20Job%20Notification.avif" alt="Instant Job Notification preview" loading="lazy" />
-            </div>
-          </div>
-
-          {/* Feature 2: AI Agent Support */}
-          <div className="feature-card feature-card--dark scroll-fade">
-            <div className="feature-icon feature-icon--lime">
-              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M13 10V3L4 14h7v7l9-11h-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-              </svg>
-            </div>
-            <h3 className="feature-title feature-title--white">AI Agent Support</h3>
-            <p className="feature-body feature-body--muted">
-              A persistent career advocate that learns your goals, handles outreach, and manages your entire pipeline while you sleep.
-            </p>
-            <div className="feature-glow" />
-          </div>
-
-        </div>
-
-        {/* Row 2 */}
-        <div className="features-row features-row--3col">
-
-          {/* Feature 3: AI Resume Customizer */}
-          <div className="feature-card scroll-fade">
-            <div className="feature-icon">
-              <svg width="24" height="24" fill="none" stroke="var(--color-text-default)" viewBox="0 0 24 24">
-                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-              </svg>
-            </div>
-            <h3 className="feature-title">AI Resume Customizer</h3>
-            <p className="feature-body">
-              Instantly re-tune your resume for every application. 100% ATS-optimized, 0% effort.
-            </p>
-          </div>
-
-          {/* Feature 4: AI Auto Apply — Figma node 47-2265 */}
-          <div className="feature-card feature-card--auto-apply scroll-fade">
-            <div className="auto-apply-grid">
-              <div className="auto-apply-content">
-                <div className="auto-apply-icon">
-                  <img src="/img/features/auto_apply_icon.svg" alt="" />
+        {/* Left: feature list */}
+        <div className="features-list">
+          {FEATURES.map((f, i) => (
+            <div
+              key={f.id}
+              className={`features-item${i === active ? ' is-active' : ''}`}
+              onClick={() => setActive(i)}
+            >
+              <div className="features-item-content">
+                <p className="features-item-label">{f.label}</p>
+                <h3 className="features-item-title">{f.title}</h3>
+                <div className="features-item-desc">
+                  <div className="features-item-desc-inner">
+                    <p>{f.body}</p>
+                  </div>
                 </div>
-                <h3 className="feature-title">AI Auto Apply</h3>
-                <p className="feature-body">
-                  Scale your search effortlessly. Our agent automatically applies to over 3,000 curated positions that fit your criteria perfectly.
-                </p>
               </div>
-              <img
-                className="auto-apply-preview-image"
-                src="/img/features/Auto%20Apply.avif"
-                alt="AI Auto Apply preview"
-                loading="lazy"
-              />
-            </div>
-          </div>
 
+              {/* Progress bar — mounts fresh each time active changes */}
+              <div className="features-progress">
+                {started && i === active && (
+                  <div
+                    key={`pb-${active}`}
+                    className="features-progress-bar"
+                    style={{ animationDuration: `${f.duration}ms` }}
+                    onAnimationEnd={handleProgressEnd}
+                  />
+                )}
+              </div>
+            </div>
+          ))}
         </div>
+
+        {/* Right: preview */}
+        <div className="features-preview-wrap">
+          {FEATURES.map((f, i) => (
+            <div
+              key={f.id}
+              className={`features-preview${i === active ? ' is-active' : ''}`}
+            >
+              {f.lottie ? (
+                <Player
+                  autoplay
+                  loop
+                  src={f.lottie}
+                  className="features-lottie"
+                />
+              ) : (
+                <div className={`features-preview-card features-preview-card--${f.id}`} />
+              )}
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   )

@@ -21,11 +21,11 @@ const stats = [
   {
     icon: (
       <svg width="24" height="24" fill="none" stroke="var(--color-secondary-text)" viewBox="0 0 24 24">
-        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
       </svg>
     ),
-    value: '5 min',
-    label: 'response time for new listings',
+    value: '300+',
+    label: 'jobs auto-applied per week',
   },
   {
     icon: (

@@ -19,7 +19,7 @@ export default function Hero() {
           <div className="hero-text-group">
             <div className="hero-pill">
               <img src={HERO_BADGE_ICON} alt="" width={20} height={20} />
-              <span>Next-Gen Career Intelligence</span>
+              <span>We apply. You interview.</span>
             </div>
 
             <h1 className="hero-heading">
@@ -28,12 +28,17 @@ export default function Hero() {
               in the AI Era.
             </h1>
 
-            <p className="hero-subtext">
-              Navigate the complexity of your career rise with effortless intelligence.
-            </p>
+            <div className="hero-subtext-group">
+              <p className="hero-subtext">
+                We work for your career — even while you sleep.
+              </p>
+              <p className="hero-subtext hero-subtext--muted">
+                Discover opportunities · Optimize your resume · Auto-apply 24/7
+              </p>
+            </div>
           </div>
 
-          <a href="#" className="cta-btn">Start Explore for Free</a>
+          <a href="#" className="cta-btn">Start for Free</a>
         </div>
 
         {/* Right Visual */}
@@ -60,8 +65,11 @@ export default function Hero() {
             Instant Notification
           </div>
           <div className="hero-chip chip-ai-actions">
-            <img src={HERO_CHIP_AI_ACTIONS} alt="" width={20} height={20} />
-            AI Actions
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="7.5" cy="15.5" r="5.5" />
+              <path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3" />
+            </svg>
+            Hidden Opportunity
           </div>
           <div className="hero-chip chip-auto-apply">
             <img src={HERO_CHIP_AUTO_APPLY} alt="" width={20} height={20} />
