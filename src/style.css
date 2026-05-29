@@ -2275,6 +2275,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: var(--shadow-float);
   transform: translateY(-1px);
 }
+/* Elite matches (≥80%) get a subtle accent so the strongest fits stand out */
+.jb-card[data-match-tier="elite"] {
+  border-color: var(--ring-progress-elite);
+}
+.jb-card[data-match-tier="elite"]:hover {
+  border-color: var(--ring-progress-elite);
+}
 /* Card top row: time · applicants + icons */
 .jb-card-top {
   display: flex;
@@ -2343,7 +2350,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .jb-co    { font-size: 11px; color: var(--color-text-second-2); line-height: 1.2; }
 .jb-title { font-family: var(--font-heading); font-size: 15px; font-weight: 700; color: var(--color-text-default); line-height: 1.3; margin-top: 2px; }
-.jb-hot   { padding: var(--space-1) 7px; background: var(--color-hot-bg); border-radius: var(--radius-full); font-size: 10.5px; font-weight: 600; color: var(--color-hot-text); flex-shrink: 0; }
+.jb-hot   { display: inline-flex; align-items: center; gap: 3px; padding: var(--space-1) 7px; background: var(--color-hot-bg); border-radius: var(--radius-full); font-size: 10.5px; font-weight: 600; color: var(--color-hot-text); flex-shrink: 0; }
+.jb-hot svg { color: var(--color-hot-text); }
 
 /* Location row */
 .jb-loc-row {

@@ -80,6 +80,14 @@ export default function JobCard({ job, onSave }: JobCardProps) {
       {/* Top row: time · applicants + save / link icons */}
       <div className="jb-card-top">
         <div className="jb-card-top-meta">
+          {job.hot && (
+            <span className="jb-hot">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2c1 3-1 4.5-2.5 6.5C8 10.5 7 12.3 7 14.5a5 5 0 0 0 10 0c0-1.8-.7-3.3-1.7-4.6-.3 1-1 1.8-1.9 2.2.4-2.6-.6-5.4-1.4-10.1z"/>
+              </svg>
+              Hot
+            </span>
+          )}
           <span className="jb-mt">{job.posted}</span>
           <span className="jb-mtsep" />
           <span className="jb-mt">{applicantsText}</span>
